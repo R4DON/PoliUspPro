@@ -1,0 +1,746 @@
+id,subreddit,kind,title,score,selftext,sentimento
+t3_1il1iwf,Python,t3,Sunday Daily Thread: What's everyone working on this week?,1,"# Weekly Thread: What's Everyone Working On This Week? 🛠️
+
+Hello /r/Python! It's time to share what you've been working on! Whether it's a work-in-progress, a completed masterpiece, or just a rough idea, let us know what you're up to!
+
+## How it Works:
+
+1. **Show &amp; Tell**: Share your current projects, completed works, or future ideas.
+2. **Discuss**: Get feedback, find collaborators, or just chat about your project.
+3. **Inspire**: Your project might inspire someone else, just as you might get inspired here.
+
+## Guidelines:
+
+* Feel free to include as many details as you'd like. Code snippets, screenshots, and links are all welcome.
+* Whether it's your job, your hobby, or your passion project, all Python-related work is welcome here.
+
+## Example Shares:
+
+1. **Machine Learning Model**: Working on a ML model to predict stock prices. Just cracked a 90% accuracy rate!
+2. **Web Scraping**: Built a script to scrape and analyze news articles. It's helped me understand media bias better.
+3. **Automation**: Automated my home lighting with Python and Raspberry Pi. My life has never been easier!
+
+Let's build and grow together! Share your journey and learn from others. Happy coding! 🌟",Neutro
+t3_1iml55r,Python,t3,Tuesday Daily Thread: Advanced questions,7,"# Weekly Wednesday Thread: Advanced Questions 🐍
+
+Dive deep into Python with our Advanced Questions thread! This space is reserved for questions about more advanced Python topics, frameworks, and best practices.
+
+## How it Works:
+
+1. **Ask Away**: Post your advanced Python questions here.
+2. **Expert Insights**: Get answers from experienced developers.
+3. **Resource Pool**: Share or discover tutorials, articles, and tips.
+
+## Guidelines:
+
+* This thread is for **advanced questions only**. Beginner questions are welcome in our [Daily Beginner Thread](#daily-beginner-thread-link) every Thursday.
+* Questions that are not advanced may be removed and redirected to the appropriate thread.
+
+## Recommended Resources:
+
+* If you don't receive a response, consider exploring r/LearnPython or join the [Python Discord Server](https://discord.gg/python) for quicker assistance.
+
+## Example Questions:
+
+1. **How can you implement a custom memory allocator in Python?**
+2. **What are the best practices for optimizing Cython code for heavy numerical computations?**
+3. **How do you set up a multi-threaded architecture using Python's Global Interpreter Lock (GIL)?**
+4. **Can you explain the intricacies of metaclasses and how they influence object-oriented design in Python?**
+5. **How would you go about implementing a distributed task queue using Celery and RabbitMQ?**
+6. **What are some advanced use-cases for Python's decorators?**
+7. **How can you achieve real-time data streaming in Python with WebSockets?**
+8. **What are the performance implications of using native Python data structures vs NumPy arrays for large-scale data?**
+9. **Best practices for securing a Flask (or similar) REST API with OAuth 2.0?**
+10. **What are the best practices for using Python in a microservices architecture? (..and more generally, should I even use microservices?)**
+
+Let's deepen our Python knowledge together. Happy coding! 🌟",Neutro
+t3_1ime8ja,Python,t3,A Modern Python Repository Template with UV and Just,183,"Hey folks, I wanted to share a Python repository template I've been using recently. It's not trying to be the ultimate solution, but rather a setup that works well for my needs and might be useful for others.
+
+**What My Project Does**
+
+It's a repository template that combines several modern Python tools, with a focus on speed and developer experience:
+
+\- UV for package management
+
+\- Just as a command runner
+
+\- Ruff for linting and formatting
+
+\- Mypy for type checking
+
+\- Docker support with a multi-stage build
+
+\- GitHub Actions CI/CD setup
+
+The main goal was to create a clean starting point that's both fast and maintainable.
+
+**Target Audience**
+
+This template is meant for developers who want a production-ready setup but don't need all the bells and whistles of larger templates.
+
+**Comparison**
+
+The main difference from other templates is the use of Just instead of Make as the command runner. While this means an extra installation step, Just offers several advantages, such as a cleaner syntax, better dependency handling and others.
+
+I also chose UV over pip for package management, but at this point I don't consider this as something unusual in the Python ecosystem.
+
+You can find the template here: [https://github.com/GiovanniGiacometti/python-repo-template](https://github.com/GiovanniGiacometti/python-repo-template)
+
+Happy to hear your thoughts and suggestions for improvement!",Neutro
+t3_1imhrqa,Python,t3,"Inherit from ""dict"" or ""UserDict""?",34,"I'm working on a project where we need to integrate a dictionary with a ttk.Treeview. The easiest approach would have been to handle data and visualization separately, but due to project requirements, we opted for a combined structure where both are tightly linked.
+
+The idea is straightforward in theory: any change to the dictionary should be reflected in the Treeview, and any modification in the Treeview should update the dictionary. To achieve this, we're implementing the most efficient communication path between the data structure and its visualization within a single class.
+
+Our initial plan was to intercept accesses using \_\_getitem\_\_, \_\_setitem\_\_, and \_\_delitem\_\_ by inheriting directly from ""dict"". However, a teammate suggested we should use ""UserDict"" from ""collections"" instead. We did a quick switch with the little code we have so far, and in practice, both approaches seem to work exactly the same.
+
+That said, how can we be sure which one is the better choice for extending dictionary functionality?
+
+This has sparked some minor disagreements in our team. ChatGPT leans towards ""UserDict"", but some of us prefer minimizing intermediaries to ensure efficiency stays ""bare-metal,"" if you know what I mean.",Neutro
+t3_1in2fbu,Python,t3,Boolean search query generator,1,"I’m working on a project where I generate Boolean queries using an LLM (like ChatGPT), but I need to ensure that the generated queries are valid based on the data in my database. If certain terms in the query don’t exist in the database, I need to automatically remove or modify them.
+
+For example:
+
+LLM-Generated Query: (""iPhone 14"" OR ""Samsung Galaxy S22"") AND (""128GB"" OR ""256GB"") AND (""Red"" OR ""Blue"")
+
+Database Check:
+
+My DB has entries for ""iPhone 14"" and ""Samsung Galaxy S22"".
+
+It only has ""128GB"" as a storage option (no ""256GB"").
+
+For colors, only ""Red"" is available (no ""Blue"").
+
+
+Modified Query (after DB validation): (""iPhone 14"" OR ""Samsung Galaxy S22"") AND ""128GB"" AND ""Red""
+
+
+How to efficiently verify and modify these Boolean queries based on the DB contents? Are there existing libraries or tools that could help streamline this process?
+
+Keep in mind that I can only use one llm cal for this purpose.
+",Neutro
+t3_1im66lu,Python,t3,The Hidden Bias of Alembic and Django Migrations (and when to consider alternatives),79,"Hey all,
+
+My name is Rotem, I'm one of the creators of [Atlas](https://atlasgo.io), a database schema-as-code tool. You can find us on [GitHub](https://github.com/ariga/atlas).
+
+I recently wrote a blog post covering cases where you might want to consider an alternative to Alembic or Django migrations for your schema changes.
+
+Don't get me wrong - alembic and Django migrations are great tools - among the best in the industry - if you are using them successfully, you should probably keep at it :-)
+
+However, over the years, I've come to realize that these tools, having been built to fit the use case of serving an ORM, have biases that might hinder your project.
+
+In case you are interested, you can [find the blog post here](https://atlasgo.io/blog/2025/02/10/the-hidden-bias-alembic-django-migrations?utm_source=reddit&amp;utm_medium=post&amp;utm_campaign=python).
+
+Atlas has two capabilities that enable it to work very well inside ORM codebases, `external_schema` and `composite_schema`. Atlas has ORM integration plugins called ""providers"" that allow it to read the desired schema of the database from your ORM code, you can then use it like:
+
+    data ""external_schema"" ""sqlalchemy"" {
+        program = [
+            ""atlas-provider-sqlalchemy"",
+            ""--path"", ""./models"",
+            ""--dialect"", ""postgresql""
+        ]
+    }
+    
+    data ""composite_schema"" ""example"" {
+      // First, load the schema with the SQLAlchemy provider
+      schema ""public"" {
+        url = data.external_schema.sqlalchemy.url
+      }
+      // Next, load the additional schema objects from a SQL file
+      schema ""public"" {
+        url = ""file://extra_resources.sql""
+      }
+    }
+    
+    env ""local"" {
+      src = data.composite_schema.example.url
+      // ... other configurations
+    }
+
+What happens here is:
+
+* Atlas reads the sqlalchemy schema from the ""models"" package and loads its SQL representation
+* Atlas calculates the composites schema from [sqlalchemy](https://github.com/ariga/atlas-provider-sqlalchemy) \+ ""extra\_resources.sql""
+* Atlas uses this composite schema as the desired state for your project
+
+From there, similarly to alembic/django migrations atlas can automatically calculate migrations for you.
+
+If you read all the way down here and want to learn more, the blog [post is here](https://atlasgo.io/blog/2025/02/10/the-hidden-bias-alembic-django-migrations?utm_source=reddit&amp;utm_medium=post&amp;utm_campaign=python) for you to read.
+
+As always, keen to hear your feedback and answer any questions.
+
+\-R",Neutro
+t3_1imc4we,Python,t3,Someone talk me down from using Yamale,16,"...or push me over the edge; whichever.   So I've been looking into YAML schema validators that can handle complex yaml files like, for example, the \`ci.yml\` file that configures GitHub actions.     
+  
+The combined internet wisdom from searching google and conferring with Gemini and Claude 3.5 is to use \`jsonschema.validate\`.   But that seems, IDK, like just wrong to the core.   Besides aren't there a few things that you can do in .yml files that you can't in .json?
+
+After some scrolling, I came across [Yamale](https://pypi.org/project/yamale/), which looks pretty awesome albeit underrated.  I like the \`includes\` and 'recursions', but I have a few things about it that make me hesitate:  
+\- Is a really as popular as PyPy makes it seem (2M monthly dowloads)?  When I search specifically for use cases and questions about it on SO,  🦗.   Same here on Reddit.  Maybe everyone using it is so happy and it works so well as to be invisible.  Or maybe that ""2M monthly downloads"" means nothing?  
+\- Is it going to be around and supported much longer?  From the GH repo I can see that it is mature, but being actively worked on, but it's also mostly one contributor and also, it's in the 23andMe github org.   Isn't 23andMe about to go belly up?   I can easily see this being pulled from GitHub at anytime the PE firm that ends up owning 23andMe goes into asset protection mode.  
+\- Would their schema definition file be sufficient for getting a dump of the schema and what is expected that any Python programmer could easily understand.  I can obviously just write all that out in my API docs.
+
+",Negativo
+t3_1in0zhc,Python,t3,Open-source AI influencer in Python,0,"* **What My Project Does** – Open-source project to create a virtual AI influencer in Python
+* **Target Audience** – Developers
+* **Comparison** – Built on top of free to use open-source technologies
+
+Link to project :- [https://github.com/SamurAIGPT/Ai-Influencer/](https://github.com/SamurAIGPT/Ai-Influencer/)",Neutro
+t3_1imwemv,Python,t3,Controlling mouse with hand gesture. What are your thoughts.!,0,"[https://www.reddit.com/r/PythonProjects2/comments/1imvsya/lets\_talk\_about\_python\_opencv/](https://www.reddit.com/r/PythonProjects2/comments/1imvsya/lets_talk_about_python_opencv/)
+
+\#python #opencv",Neutro
+t3_1im12r8,Python,t3,I made Versioneer work with Hatchling and pdm build backends,25,"[version-pioneer](https://github.com/kiyoon/version-pioneer) is a fork of Versioneer that supports Hatchling and pdm build backends.
+
+The reason I hesitated for so long to switch from setuptools to hatchling etc. was Versioneer. I believe versioning system should be independent from the backend you use so you can easily migrate. Not only that you have to learn a new system, but also they don't work the same way. For example, I noticed other VCS versioning systems do not support dynamic version resolution in editable installs (`pip install -e .`), which means while developing you will often get incorrect version.
+
+### What My Project Does:
+
+- **Highly customisable**: It's an easy-to-read script. [Literally a simple Python script](https://github.com/kiyoon/version-pioneer/blob/master/src/version_pioneer/versionscript.py) in which you can customise the version format or anything you need.
+- 🐍 Runs with Python 3.8+
+- ❌📦 No dependencies like package, config file etc. It runs with one Python file. 
+- ⭕ Works with any build backend with hooks. (Supports setuptools, hatchling, pdm)
+- 🦀 Works with any language, not just Python.
+    - Version format `""digits""` generates digits-only version string which is useful for multi-language projects, Chrome Extension, etc. because their versioning standard is different.
+    - CLI makes it easy to compute the version without vendoring anything in the project.
+- 🩹 Can resolve version even when the git info is missing.
+    - Downloaded from GitHub Releases? Read from the directory name.
+        - The `parentdir_prefix` is automatically resolved from `pyproject.toml`'s source URL etc.
+    - sdist built without writing a resolved versionfile?
+        - Read from PKG-INFO. 
+- 🔢 New version formats:
+    - `""pep440-master""`: shows the distance from the tag to master/main, and the master to the current branch. (e.g. 1.2.3&amp;#8203;**+4.gxxxxxxx**&amp;#8203;_.5.gxxxxxxx_ )
+    - `""digits""`: the distance and dirty information compiled to the last digit. (e.g. 1.2.3&amp;#8203;**.4**)
+- &lt;/&gt; API provided for complete non-vendored mode support.
+    - With Versioneer you still had to install a `_version.py` script in your project, but Version-Pioneer is able to be installed as a package.
+- 💻 CLI tool to get version string, execute the `_version.py` versionscript, and test your setup.
+
+### Target Audience:
+
+Developers who ...
+
+- want to systematically manage version string.
+- are looking for a robust, easy-to-use solution.
+- want it to be fully customisable.
+
+### Comparison:
+
+[Versioneer](https://github.com/python-versioneer/python-versioneer) finds the closest git tag like `v1.2.3` and generates a version string like `1.2.3+4.gxxxxxxx.dirty`.
+
+- `1.2.3` is the closest git tag.
+- `+4` is the number of commits since the tag.
+- `gxxxxxxx` is the git commit hash (without the leading `g`).
+- `.dirty` is appended if the working directory is dirty (i.e. has uncommitted changes).
+
+[setuptools-scm](https://github.com/pypa/setuptools-scm) is a similar tool, but with some differences:
+
+- How the version string is rendered: `1.2.3+4.gxxxxxxx.dirty` vs `1.2.4.dev4+gxxxxxxx`
+    - No `.dirty` in setuptools-scm.
+    - Infer the next version number (i.e. 1.2.4 instead of 1.2.3).
+- The `_version.py` file is always a constant in setuptools-scm.
+    - Versioneer can dynamically generate the version string at runtime, so it's always up-to-date. Useful for development (pip install -e .).
+    - Setuptools-scm won't ever change the version string after installation. You need to reinstall to update the version string.
+
+I have used versioneer for years, and I like the format and dynamic resolution of versions for development. However,
+
+1. It doesn't support any build backends other than `setuptools` (like `pdm`, `hatchling`, `poetry`, `maturin`, `scikit-build`, etc.)
+2. It doesn't support projects that are not Python (like Rust, Chrome Extension, etc.).
+
+Every time I had to figure out how to integrate a new VCS versioning plugin but they all work differently and produce different version strings. GitHub Actions and other tools may not work with all different version format. Different language usually expects different format, and it's especially hard to make it compatible for mixed language projects.
+
+The original versioneer is 99% boilerplate code to make it work with all legacy setuptools configurations, trying to ""generate"" code depending on the configuration, etc.. But the core functionality is simple: just get version from git tag and format it. I had to leverage this logic to integrate Versioneer in every project I had.",Positivo
+t3_1im76ny,Python,t3,Which package makes the console/terminal error messages legible?,2,"Looking for a package for prettifying console/terminal error messages (e.g., traceback) with minimal implementation effort required. I have come across this list below but I wonder what the community would suggest.
+
+https://github.com/mbarkhau/pretty-traceback
+
+https://github.com/qix-/better-exceptions
+
+https://github.com/cknd/stackprinter
+
+https://github.com/onelivesleft/PrettyErrors
+
+https://github.com/skorokithakis/tbvaccine
+
+https://github.com/aroberge/friendly-traceback
+
+https://github.com/HallerPatrick/frosch
+
+https://github.com/nir0s/backtrace
+
+https://github.com/staticshock/colored-traceback.py
+
+https://github.com/chillaranand/ptb
+
+https://github.com/laurb9/rich-traceback
+
+https://github.com/willmcgugan/rich#tracebacks",Neutro
+t3_1im5i4s,Python,t3,HTTP queries parameters to MongoDB Query Language converter,3,"I did develop a Python module for my company based on Regex to convert HTTP queries parameters sent from frontend app (React &amp; Angular mainly) to our backend (FastAPI) in MongoDB Query Language (MQL). This way, frontend devs can easilly make specific queries without asking the backend devs.
+
+It is working pretty well for a couple of years but it became pretty hard to maintain and update. I'm also asking myself, can I improve it ? Here is a couple of exemple that I've build over the years:
+
+    http://localhost:8000/api/v1/company?filter=category==507f1f77bcf86cd799439011^created_at=BETWEEN(2024-01-01,2025-06-30)^nb_employee&gt;10
+    
+    # Output in Python
+    from query import MongoQueryManager as mqm
+    
+    query = mqm(filter=""category==507f1f77bcf86cd799439011^created_at=BETWEEN(2024-01-01,2025-06-30)^nb_employee&gt;10"", page=0, limit=100, order_dir=""asd"", order_by=""created_at"", excluded_keys=[])
+    print(query.mongo_args)
+    
+    {'filter': {'$and': [{'category': '507f1f77bcf86cd799439011'}, {'created_at': {'$gte': 1704063600.0, '$lte': 1751234400.0}}, {'nb_employee': {'$gt': 10}}]}, 'sort': [('created_at', -1)], 'skip': 0}
+
+Note : `507f1f77bcf86cd799439011` is an ObjectId (specific to MongoDB).
+
+There is some limitation, we can only put 3 logical operator if there is AND and OR at the same time. Example : `arg1=1 AND arg2=2 AND arg3=3 OR arg4=4`. I never find a way to code something stable enough ...
+
+I'm looking for better alternative, if any. I'm also trying to convience my manager to put this Python module in open-source if anyone would be interested.",Neutro
+t3_1imh7nw,Python,t3,Coursera Guided Project: Build a Data Science Web App with Streamlit and Python,0,"Hi there, everyone! Does anyone have the Colab or Jupyter Python code for this Coursera guided project? If so, please share it in the comments or message me. Thanks in advance!",Neutro
+t3_1ilhbkk,Python,t3,FastAPI Guard - A FastAPI extension to secure your APIs,215,"Hi everyone,
+
+I've published **FastAPI Guard** some time ago:
+
+**Documentation**: [rennf93.github.io/fastapi-guard/](https://rennf93.github.io/fastapi-guard/)
+
+**GitHub repo**: [github.com/rennf93/fastapi-guard](https://github.com/rennf93/fastapi-guard)
+
+**What is it?**
+FastAPI Guard is a security middleware for FastAPI that provides:
+- IP whitelisting/blacklisting
+- Rate limiting &amp; automatic IP banning
+- Penetration attempt detection
+- Cloud provider IP blocking
+- IP geolocation via IPInfo.io
+- Custom security logging
+- CORS configuration helpers
+
+It's licensed under MIT and integrates seamlessly with FastAPI applications.
+
+**Comparison to alternatives**:
+- `fastapi-security`: Focuses more on authentication, while FastAPI Guard provides broader network-layer protection
+- `slowapi`: Handles rate limiting but lacks IP analysis/geolocation features
+- `fastapi-limiter`: Pure rate limiting without security features
+- `fastapi-auth`: Authentication-focused without IP management
+
+**Key differentiators**:
+- Combines multiple security layers in single middleware
+- Automatic IP banning based on suspicious activity
+- Built-in cloud provider detection
+- Daily-updated IP geolocation database
+- Production-ready configuration defaults
+
+**Target Audience**:
+FastAPI developers needing:
+- Defense-in-depth security strategy
+- IP-based access control
+- Automated threat mitigation
+- Compliance with geo-restriction requirements
+- Penetration attempt monitoring
+
+**Feedback wanted**
+
+Thanks!",Neutro
+t3_1ilzsly,Python,t3,Inviting Collaborators for a Differentiable Geometric Loss Function Library,6,"Hello,
+I am a grad student at Stanford, working on shape optimization for aircraft design.
+
+I am looking for collaborators on a project for creating a differentiable geometric loss function library in pytorch.
+
+I put a few initial commits on a repository here to give an idea of what things might look like:
+[Github repo](https://github.com/atharvaaalok/geosimilarity)
+
+[Inviting collaborators on twitter](https://x.com/atharvaaalok/status/1888758440576811105)",Neutro
+t3_1iljghy,Python,t3,pydantic models for schema.org,28,"[Schema.org](http://Schema.org) is a community-driven vocabulary that allows users to add structured data to content on the web. It's used by webmasters to help search engines understand web pages. Knowledge graphs such as [yago](https://yago-knowledge.org/) also use [schema.org](http://schema.org) to enforce semantics on wikidata.
+
+* **What My Project Does** Generate pydantic models from [schema.org](http://schema.org) definition. Sample [usage](https://github.com/adsharma/schema-org-python/blob/main/tests/test_person.py).
+* **Target Audience** People interested in knowledge graphs like Yago and wikidata
+* **Comparison** Similar things exist in the [typescript world](https://github.com/google/schema-dts), but don't seem to be maintained.
+
+  
+Potential enhancements: take schemas for other domains and generate python models for those domains. Using this and the [property graph](https://github.com/adsharma/property-graph) project, you can generate structured knowledge graphs using SQL based open source tooling.  
+",Neutro
+t3_1im3ukf,Python,t3,lsp-types Package Debut,0,"\`lsp-types\` at its core is a Python package that provides Language Server Protocol (LSP) types as Python \`TypedDict\`. As a further enhancement, it provides an \`LSPSession\` class which allows you to interact with an LSP server over stdio.
+
+It is a fork to build on top of the excellent work of [*Sublime LSP*](https://github.com/sublimelsp/lsp-python-types) to make it polished enough to be released as a PyPI package as well as added support to typed notification handling.
+
+I decided to build it to solve my pain point of interacting with Pyright through Python with a typed interface. I'm more comfortable with Python than TypeScript, and need to build a service around Pyright to expose its capabilities, so here we are.
+
+[https://github.com/Mazyod/lsp-python-types](https://github.com/Mazyod/lsp-python-types)",Neutro
+t3_1im7bt2,Python,t3,"A new arpeggiator, and a discussion of clocks in Supriya",0,"I just posted a new demo [here](https://www.reddit.com/r/supriya_python/comments/1im72tk/arpeggiator_version_20_using_supriyas_clock/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button).  The new demo is built on the previous one, but uses Supriya's `Clock` class instead of `Pattern`.  The`Clock` class is very cool, as it is aware of beats per minute, time signatures, and can schedule callbacks that run in rhythmic intervals, like 1/16th notes. ",Neutro
+t3_1ilt1is,Python,t3,Monday Daily Thread: Project ideas!,5,"# Weekly Thread: Project Ideas 💡
+
+Welcome to our weekly Project Ideas thread! Whether you're a newbie looking for a first project or an expert seeking a new challenge, this is the place for you.
+
+## How it Works:
+
+1. **Suggest a Project**: Comment your project idea—be it beginner-friendly or advanced.
+2. **Build &amp; Share**: If you complete a project, reply to the original comment, share your experience, and attach your source code.
+3. **Explore**: Looking for ideas? Check out Al Sweigart's [""The Big Book of Small Python Projects""](https://www.amazon.com/Big-Book-Small-Python-Programming/dp/1718501242) for inspiration.
+
+## Guidelines:
+
+* Clearly state the difficulty level.
+* Provide a brief description and, if possible, outline the tech stack.
+* Feel free to link to tutorials or resources that might help.
+
+# Example Submissions:
+
+## Project Idea: Chatbot
+
+**Difficulty**: Intermediate
+
+**Tech Stack**: Python, NLP, Flask/FastAPI/Litestar 
+
+**Description**: Create a chatbot that can answer FAQs for a website.
+
+**Resources**: [Building a Chatbot with Python](https://www.youtube.com/watch?v=a37BL0stIuM)
+
+# Project Idea: Weather Dashboard
+
+**Difficulty**: Beginner
+
+**Tech Stack**: HTML, CSS, JavaScript, API
+
+**Description**: Build a dashboard that displays real-time weather information using a weather API.
+
+**Resources**: [Weather API Tutorial](https://www.youtube.com/watch?v=9P5MY_2i7K8)
+
+## Project Idea: File Organizer
+
+**Difficulty**: Beginner
+
+**Tech Stack**: Python, File I/O
+
+**Description**: Create a script that organizes files in a directory into sub-folders based on file type.
+
+**Resources**: [Automate the Boring Stuff: Organizing Files](https://automatetheboringstuff.com/2e/chapter9/)
+
+Let's help each other grow. Happy coding! 🌟",Neutro
+t3_1im2a56,Python,t3,Looking for contributions,1,"Hi Pythonistas,
+
+I'm the author of kreuzberg - a text extraction library (see the github here: https://github.com/Goldziher/kreuzberg).
+
+I added matrix testing to test the library against windows and macos (see this PR: https://github.com/Goldziher/kreuzberg/pull/7). Both my linux and windows tests are failing - the linux due to timeout issues, and the windows due to probably some encoding issues in paths etc.
+
+The problem is that i dont have a ready access to a windows machine, and it will be pretty frustrating debugging and fixing this only using print statements and logging in tests (yes yes... not the best way to develop or debug).
+
+Therefore, if any of you would like to contribute it would be awesome.
+
+What to do?
+
+- Fork the repo
+
+- Follow the contribution instructions in the readme.
+
+- Run the tests locally and fix the issues causing test failures on your system.
+
+- Open a PR.
+
+",Neutro
+t3_1ilhnfm,Python,t3,Two Fast Auth - A FastAPI extension to implement 2FA,24,"Hi everyone,
+
+I've published **Two Fast Auth**:
+
+**Documentation**: [rennf93.github.io/two-fast-auth/](https://rennf93.github.io/two-fast-auth/)
+
+**GitHub repo**: [github.com/rennf93/two-fast-auth](https://github.com/rennf93/two-fast-auth)
+
+**What is it?**
+
+Two Fast Auth is a FastAPI middleware that provides seamless two-factor authentication implementation with:
+
+- QR code generation for authenticator apps
+- Time-based one-time password (TOTP) verification
+- Secure recovery code management
+- Optional secret encryption
+- Middleware integration for route protection
+- Production-ready configuration defaults
+
+MIT licensed and designed specifically for FastAPI applications.
+
+**Comparison to alternatives**:
+- `fastapi-jwt-auth`: Focuses on JWT authentication without native 2FA
+- `python-otp`: Provides OTP generation but no framework integration
+- `authlib`: General-purpose auth library without FastAPI-specific middleware
+
+**Key differentiators**:
+- Native FastAPI middleware implementation
+- Built-in QR code generation endpoint
+- Recovery code lifecycle management
+- Fernet encryption for secret storage
+- Zero-configuration defaults for quick setup
+- Active maintenance with production use cases
+
+**Target Audience**:
+FastAPI developers needing:
+- Quick 2FA implementation without vendor lock-in
+- Compliance with security standards requiring MFA
+- Recovery code workflows for end-users
+- Encrypted secret storage capabilities
+- QR code-based authenticator app setup
+
+**Feedback wanted :)**
+
+Thanks!",Neutro
+t3_1ilxqiy,Python,t3,Novice Project: Texas Hold'em Poker. Roast my code,0,"[https://github.com/qwert7661/Heads-Up-Hold-em](https://github.com/qwert7661/Heads-Up-Hold-em)
+
+7 days into Python, no prior coding experience. But 3,600 hours in Factorio helped me get started.
+
+New to github so hopefully I uploaded it right. New to the automod here too so:
+
+**What My Project Does:** Its a text-only version of Heads-Up (that means 2-player) Texas Hold'em Poker, from dealing the cards to managing the chips to resolving the hands at showdown. Sometimes it does all three without yeeting chips into the void.
+
+**Target Audience:** ya'll motherfuckers, cause my friends who can't code are easily impressed
+
+**Comparison:** Well, it's like every other holdem software, except with more bugs, less efficient code, no graphics, and requires opponents to physically close their eyes so you can look at your cards in peace.
+
+Looking forward to hearing how shit my code is lmao. Not being self-deprecating, I honestly think it will be funny to get roasted here, plus I'll probably learn a thing or two.",Neutro
+t3_1iks79k,Python,t3,A new type of interpreter has been added to Python 3.14 with much better performance,1061,"Summary: This week I landed a new type of interpreter into Python 3.14. It improves performance by -3-30% (I actually removed outliers, otherwise it's 45%), and a geometric mean of 9-15% faster on pyperformance depending on platform and architecture. **The main caveat however is that it only works with the newest compilers (Clang 19 and newer).** We made this opt-in, so there's no backward compatibility concerns. Once the compilers start catching up a few years down the road, I expect this feature to become widespread.
+
+Python 3.14 documentation: [https://docs.python.org/3.14/whatsnew/3.14.html#whatsnew314-tail-call](https://docs.python.org/3.14/whatsnew/3.14.html#whatsnew314-tail-call)
+
+I have a lot of people to thank for their ideas and help: Mark Shannon, Donghee Na, Diego Russo, Garrett Gu, Haoran Xu, and Josh Haberman. Also my academic supervisors Stefan Marr and Manuel Rigger :).
+
+(Sorry can't cross-post here) Original post: [https://www.reddit.com/r/ProgrammingLanguages/comments/1ikqi0d/a\_new\_type\_of\_interpreter\_has\_been\_added\_to/](https://www.reddit.com/r/ProgrammingLanguages/comments/1ikqi0d/a_new_type_of_interpreter_has_been_added_to/)",Positivo
+t3_1imc9th,Python,t3,Who did it best? Me or chat GPT?,0,"For context I haven’t ever been amazing at coding I only got an 8 at gcse cs so yk. Haven’t coded in years but after 12 hours of sorting through my grandparents estate I though I’d write a code to make the process of sorting the changes in the shares faster. 
+
+My code:
+
+#written by me
+#first started on 30/09/2024
+
+#libary imports
+import datetime
+import math
+
+
+#varibles
+count = 40
+share_name = ""string""
+total_share_value = float(0.0)
+percentage_share_value_change = float(1.0)
+net_share_value_change = float(1.0)
+
+
+# date varbiles
+year = 2005
+month = 5
+day = 1
+# share value and dates
+
+initial_share_price = float(1.0)
+
+initial_share_value = float(1.0)
+
+initial_share_value_date = datetime.datetime(year, month, day)
+
+
+
+new_share_value = float(1.0)
+
+new_share_value_date = datetime.datetime(year, month, day)
+new_share_price = float(1.0)
+
+
+initial_share_amount = float(1.0)
+
+new_share_amount = float(1.0)
+
+#pre loop process
+print(""written by hari a sharma esq. first started on 30/09/2024 \n \n this program if used to dynamically sort through shares in varying entries, only use two entry per share. enter every number with a decimical unless its for dates. \n dates to be formated as 1/1/2000 do not put zeros infront of the day or month please,\n"")
+count = int(input(""\n please enter the number of shares you inputing please, int value not float.\n""))
+#loop
+for i in range(count):
+    #input for each varible per iteration of the loop
+    initial_share_value = float(1.0)
+    initial_share_value_date = datetime.datetime(year, month, day)
+    initial_share_amount = int(1)
+    initial_share_price = float(1.0)
+    
+    
+    
+    new_share_value = float(1.0)
+    new_share_value_date = datetime.datetime(year, month, day)
+    new_share_price = float(1.0)
+    new_share_amount = float(1.0)
+
+    #caluculation for each iteration
+    initial_share_value = initial_share_amount * initial_share_price
+    
+    new_share_value = new_share_price * new_share_amount
+    total_share_value = total_share_value + new_share_value
+    
+    percentage_share_value_change = new_share_value / initial_share_value
+    net_share_value_change = new_share_value - initial_share_value
+    
+        
+    #line lable
+    print(""&lt;==================================================&gt;"")
+    print(i+1,""out of "",count)
+    #share name recall
+    print(share_name)
+    
+    print(initial_share_value_date)
+    print(initial_share_amount)
+    print(initial_share_value)
+    print(initial_share_price)
+
+    
+    print(new_share_value_date)
+    print(new_share_amount)
+    print(new_share_value)
+    print(new_share_price)
+    
+    
+    print(""&lt;==================================================&gt;"")
+    print(""\n"")
+
+
+Chat GPT:
+
+# Import the necessary libraries
+import xlwings as xw
+
+def process_share_data():
+    # Connect to the active Excel workbook and sheet
+    wb = xw.Book.caller()  # This connects to the calling Excel workbook
+    sheet = wb.sheets['Sheet1']  # Assuming the data is on ""Sheet1""
+
+    # Read data from the Excel sheet
+    old_share_prices = sheet.range('A2:A100').value  # Assuming old share prices are in column A
+    new_share_prices = sheet.range('B2:B100').value  # Assuming new share prices are in column B
+    old_share_values = sheet.range('C2:C100').value  # Assuming old share values are in column C
+    new_share_values = sheet.range('D2:D100').value  # Assuming new share values are in column D
+
+    total_share_value = 0
+    results = []  # To store calculated results
+    
+    for old_price, new_price, old_value, new_value in zip(old_share_prices, new_share_prices, old_share_values, new_share_values):
+        # Ensure no missing data in the row
+        if None in (old_price, new_price, old_value, new_value):
+            continue
+        
+        # Perform calculations
+        initial_share_value = old_price * old_value
+        updated_share_value = new_price * new_value
+        total_share_value += updated_share_value
+        
+        if initial_share_value != 0:
+            percentage_change = updated_share_value / initial_share_value
+        else:
+            percentage_change = 0
+        
+        net_change = updated_share_value - initial_share_value
+        
+        # Append results as a tuple (initial, updated, percentage, net)
+        results.append((initial_share_value, updated_share_value, percentage_change, net_change))
+
+    # Write results back to Excel (starting at column E)
+    sheet.range('E2').value = results  # Results will be written to columns E to H
+    
+    # Optionally, display the total share value in a specific cell (e.g., E1)
+    sheet.range('E1').value = f""Total Share Value: {total_share_value}""
+
+# Add the below line only if running via the ""RunPython"" Excel add-in
+if __name__ == ""__main__"":
+    xw.Book('your_excel_file.xlsm').set_mock_caller()  # Ensure this matches your Excel file name
+    process_share_data()s",Neutro
+t3_1ilfqtm,Python,t3,IntentGuard - verify code properties using natural language assertions,13,"I'm sharing **IntentGuard**, a testing tool that lets you verify code properties using natural language assertions. It's designed for scenarios where traditional test code becomes unwieldy, but comes with important caveats.
+
+**What My Project Does:**
+
+* Lets you write test assertions like *""All database queries should be parameterized""* or *""Public methods must have complete docstrings""*
+* Integrates with pytest/unittest
+* Uses a local AI model (1B parameter fine-tuned Llama 3.2) via llamafile
+* Provides detailed failure explanations
+* MIT licensed
+
+✅ **Working Today:**
+
+* Basic natural language assertions for Python code
+* pytest/unittest integration
+* Local model execution (no API calls)
+* Result caching for unchanged code/assertions
+* Self-testing capability (entire test suite uses IntentGuard itself)
+
+⚠️ **Known Limitations:**
+
+* Even with consensus voting, misjudgments can happen due to the weakness of the model
+* Performance and reliability benchmarks are unfortunately not yet available
+
+**Why This Might Be Interesting:**
+
+* Could help catch architectural drift in large codebases
+* Useful for enforcing team coding standards
+* Potential for documentation/compliance checks
+* Complements traditional testing rather than replacing it
+
+**Next Steps:**
+
+1. Measure the performance and reliability across a set of diverse problems
+2. Improve model precision by expanding the training data and using a stronger base model
+
+**Installation &amp; Docs:**
+
+`pip install intentguard`
+
+[GitHub Repository](https://github.com/kdunee/intentguard)
+
+**Comparison**: I'm not aware of any direct alternatives.
+
+**Target Audience**: The tool works but needs rigorous evaluation - consider it a starting point rather than production-ready. Would appreciate thoughts from the testing/static analysis community.",Neutro
+t3_1il7vim,Python,t3,"ParLlama v0.3.15 released. Supports Ollama, OpenAI, GoogleAI, Anthropic, Groq, Bedrock, OpenRouter",7,"# What My project Does:
+
+PAR LLAMA is a powerful TUI (Text User Interface) written in Python and designed for easy management and use of Ollama and Large Language Models as well as interfacing with online Providers such as Ollama, OpenAI, GoogleAI, Anthropic, Bedrock, Groq, xAI, OpenRouter
+
+# Whats New:
+
+# v0.3.15
+
+* Added copy button to the fence blocks in chat markdown for easy code copy.
+
+# v0.3.14
+
+* Fix crash caused some models having some missing fields in model file
+
+# v0.3.13
+
+* Handle clipboard errors
+
+# v0.3.12
+
+* Fixed bug where changing providers that have custom urls would break other providers
+* Fixed bug where changing Ollama base url would cause connection timed out
+
+# Key Features:
+
+* Easy-to-use interface for interacting with Ollama and cloud hosted LLMs
+* Dark and Light mode support, plus custom themes
+* Flexible installation options (uv, pipx, pip or dev mode)
+* Chat session management
+* Custom prompt library support
+
+# GitHub and PyPI
+
+* PAR LLAMA is under active development and getting new features all the time.
+* Check out the project on GitHub or for full documentation, installation instructions, and to contribute: [https://github.com/paulrobello/parllama](https://github.com/paulrobello/parllama)
+* PyPI [https://pypi.org/project/parllama/](https://pypi.org/project/parllama/)
+
+# Comparison:
+
+I have seem many command line and web applications for interacting with LLM's but have not found any TUI related applications
+
+# Target Audience
+
+Anybody that loves or wants to love terminal interactions and LLM's",Neutro
+t3_1il8lcd,Python,t3,Sync clipboard across guest and host with both running on wayland,3,"# What My Project Does
+
+WayClipSync enables clipboard sharing between guest and host in wayland sessions.
+
+# Target Audience
+
+People who like to tinker with different virtual machines and use wayland compositors that do not automatically support the clipboard sync.
+
+# Comparison
+
+`spice-vdagent` only works on X-org. On wayland the simplest way to copy from host is `xsel -ob` and send to host from guest is `xsel -ib`. It was annoying for me to remember to use this command, so I made this.
+
+# Note
+
+This program requires `wl-clipboard` to work
+
+[Github](https://github.com/azmat-y/WayClipSync/tree/main)",Neutro
